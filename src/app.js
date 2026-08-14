@@ -9,6 +9,7 @@ app.use(express.urlencoded({ extended: true, limit: '16kb' }));
 app.use(cors());
     methods: ['GET', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Authorization', 'Content-Type'],
+    credentials: true,
 
 app.get('/', (req, res) => {
   res.send('Homepage');
