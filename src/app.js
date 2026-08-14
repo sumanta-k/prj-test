@@ -10,3 +10,4 @@ app.get('/instagram', (req, res) => {
   res.send('instagram page');
 });
 
+export default app;
