@@ -7,3 +7,5 @@ const healthCheck = (req, res) => {
     })
   } catch (err) {}
 };
+
+export {healthCheck};
