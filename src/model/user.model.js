@@ -26,4 +26,12 @@ const userSchema = new Schema(
   { timestamps: true }
 );
 
+// hooks
+
+userSchema.pre('save', async function (next) {
+  if (!this.isModified('password')) return next();
+  await bcrypt.hash(this.password);
+  next();
+});
+
 const User = mongoose.model('user', userSchema);
